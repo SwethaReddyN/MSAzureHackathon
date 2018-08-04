@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+		
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+		<link href="style.css" rel="stylesheet" />
+		
+	</head>
+	
+	
+	<body>
+	
+		<div id="configbox">
+		<div class="infobox_detail_background" onclick="closeConfigBox()"></div>
+		<div class="configbox_container">
+				<div class="configbox_header">Bin Configuration</div>
+				<div class="configbox_body">
+					<h3><center>Violations</center></h3>
+					<input type="checkbox" id="cbcheckbox"/>
+					<label for="cbcheckbox"></label>Cardboard<br>
+					<input type="checkbox" id="cflcheckbox"/>
+					<label for="cflcheckbox"></label>CFL<br>
+					<input type="checkbox" id="escheckbox"/>
+					<label for="escheckbox"></label>Egg Shell<br>
+					<input type="checkbox" id="pbcheckbox"/>
+					<label for="pbcheckbox"></label>Plastic Bags<br>
+					<input type="checkbox" id="sfcheckbox"/>
+					<label for="sfcheckbox"></label>Styrofoam<br>
+					<div class="infobox_btn" onclick="sendConfig();"><button>Save</button></div>
+				</div>
+			</div>
+					</div>
+	
+		
+		<div id="infobox_detail">
+			<div class="infobox_detail_background" onclick="closeDetailBox()"></div>
+			<div class="infobox_detail_container">
+				<div id="detailbox_header"></div>
+				<div class="infobox_body">
+					<div class="infobox_body_title">Bin Info</div>
+					<div class="infobox_body_key">Location:</div>
+					<div id="infobox_body_location" class="infobox_body_value"></div>
+					<div class="infobox_body_key">Type of Bin:</div>
+					<div id="infobox_body_type" class="infobox_body_value"></div>
+					<hr>
+					<div class="infobox_body_title">Violations Overview</div>
+					<div id="chart_violation"></div>
+					<hr>
+					<div class="infobox_body_title">View violations</div>
+					<div id="text_link"></div>
+					<div style="height: 2em;"></div>
+				</div>
+			</div>
+		</div>
+
+		
+		
+		<div class="header">
+			Recycle.io
+			<button class="btn_config" onclick="openConfigBox()"><img src="icon_config.png"></button>
+
+		</div>
+		<div class="mapContainer">
+			<div id="myMap">
+			
+			
+			</div>
+		</div>
+
+		<script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=Ahe2Ffj8d_hZt3u9JW1qasy2G4xkwyobMp2AUgU-OV3JV2DAydDtQpnIUKVzR5IK&callback=loadMap' async defer></script>
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script src="main.js"></script>
+
+	</body>
+
+
+</html>
