@@ -1,4 +1,4 @@
- # **RECYCLE.IO**
+# **RECYCLE.IO**
 
 Welcome to the home of Recycle.io
 
@@ -15,10 +15,12 @@ This tutorial shows how to setup Recycle.io system. It includes Edge modules sou
 	3. Connect GrovePi to RaspberryPi GPIO
 	4. Connect ultrasonic ranger sensor to Digital Pin 3
 	5. Connect camera module to RaspberryPi
-	6. Place/attach ultrasonic ranger and camera to the bin as shown below
+	6. Place/attach ultrasonic ranger and camera to the bin as shown below <br><br>
+	![edge/setup.jpg](edge/setup.jpg)
+		
   <br>
   
-  ### Development/Deployement resources:
+  ### Development/Deployement resources
 1. Install [Visual Studio Code](https://code.visualstudio.com/download).
 2. [Azure IoT Edge extension](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge) for Visual Studio Code.
 3. Install [Docker CE](https://docs.docker.com/install/) on the device with Visual Studio Code.
