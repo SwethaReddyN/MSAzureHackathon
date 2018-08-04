@@ -20,7 +20,7 @@ This tutorial shows how to setup Recycle.io system. It includes Edge modules sou
 		
   <br>
   
-  ### Development/Deployement resources
+  ### Development/Deployment resources
 1. Install [Visual Studio Code](https://code.visualstudio.com/download).
 2. [Azure IoT Edge extension](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge) for Visual Studio Code.
 3. Install [Docker CE](https://docs.docker.com/install/) on the device with Visual Studio Code.
