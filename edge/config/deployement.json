@@ -1,0 +1,98 @@
+{
+    "modulesContent": {
+        "$edgeAgent": {
+            "properties.desired": {
+                "schemaVersion": "1.0",
+                "runtime": {
+                    "type": "docker",
+                    "settings": {
+                        "loggingOptions": "",
+                        "minDockerVersion": "v1.25",
+                        "registryCredentials": {
+                            "{azurecontainer-name}": {
+                                "address": "iothackathonregistry.azurecr.io",
+                                "password": "{password}",
+                                "username": "{username}"
+                            }
+                        }
+                    }
+                },
+                "systemModules": {
+                    "edgeAgent": {
+                        "type": "docker",
+                        "settings": {
+                            "image": "mcr.microsoft.com/azureiotedge-agent:1.0",
+                            "createOptions": "{}"
+                        }
+                    },
+                    "edgeHub": {
+                        "type": "docker",
+                        "settings": {
+                            "image": "mcr.microsoft.com/azureiotedge-hub:1.0",
+                            "createOptions": "{\n  \"HostConfig\": {\n    \"PortBindings\": {\n      \"8883/tcp\": [\n        {\n          \"HostPort\": \"8883\"\n        }\n      ],\n      \"443/tcp\": [\n        {\n          \"HostPort\": \"443\"\n        }\n      ],\n      \"5671/tcp\": [\n        {\n          \"HostPort\": \"5671\"\n        }\n      ]\n    }\n  }\n}"
+                        },
+                        "status": "running",
+                        "restartPolicy": "always"
+                    }
+                },
+                "modules": {
+                    "client-module": {
+                        "type": "docker",
+                        "settings": {
+                            "image": "iothackathonregistry.azurecr.io/iot-client",
+                            "createOptions": "{\t\r\n\t\"NetworkingConfig\": {\r\n\t\t\"EndpointsConfig\": {\r\n\t\t\t\"host\": {}\r\n\t\t}\r\n\t},\r\n\t\"HostConfig\": {\r\n\t\t\"Privileged\": true,\r\n\t\t\"NetworkMode\": \"host\"\r\n\t}\r\n}"
+                        },
+                        "env": {
+                            "IoTHubConnectionString": {
+                                "value": "{IoTHubConnectionString}"
+                            },
+                            "IoTDeviceConnectionString": {
+                                "value": "{IoTDeviceConnectionString}"
+                            }
+                        },
+                        "status": "running",
+                        "restartPolicy": "always",
+                        "version": "1.0"
+                    },
+                    "smart-bin": {
+                        "type": "docker",
+                        "settings": {
+                            "image": "iothackathonregistry.azurecr.io/smart-bin",
+                            "createOptions": "{\t\r\n\t\"NetworkingConfig\": {\r\n\t\t\"EndpointsConfig\": {\r\n\t\t\t\"host\": {}\r\n\t\t}\r\n\t},\r\n\t\"HostConfig\": {\r\n\t\t\"Privileged\": true,\r\n\t\t\"NetworkMode\": \"host\"\r\n\t}\r\n}"
+                        },
+                        "status": "running",
+                        "restartPolicy": "always",
+                        "version": "1.0"
+                    },
+                    "image-classifier": {
+                        "type": "docker",
+                        "settings": {
+                            "image": "iothackathonregistry.azurecr.io/image-classifier",
+                            "createOptions": "{\t\r\n\t\"NetworkingConfig\": {\r\n\t\t\"EndpointsConfig\": {\r\n\t\t\t\"host\": {}\r\n\t\t}\r\n\t},\r\n\t\"HostConfig\": {\r\n\t\t\"Privileged\": true,\r\n\t\t\"NetworkMode\": \"host\"\r\n\t}\r\n}"
+                        },
+                        "status": "running",
+                        "restartPolicy": "always",
+                        "version": "1.0"
+                    }
+                }
+            }
+        },
+        "$edgeHub": {
+            "properties.desired": {
+                "schemaVersion": "1.0",
+                "routes": {
+                    "route": "FROM /messages/* INTO $upstream"
+                },
+                "storeAndForwardConfiguration": {
+                    "timeToLiveSecs": 7200
+                }
+            }
+        },
+        "client-module": {
+            "properties.desired": {
+                "binWidth": 33,
+                "binType": "recycle"
+            }
+        }
+    }
+}
