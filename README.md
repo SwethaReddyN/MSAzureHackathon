@@ -17,7 +17,6 @@ This tutorial shows how to setup Recycle.io system. It includes Edge modules sou
 	5. Connect camera module to RaspberryPi
 	6. Place/attach ultrasonic ranger and camera to the bin as shown below
 	
-	[[https://github.com/MSAzureHackathon/recycle.io/blob/master/edge/setup.jpg|alt=setup]]
   <br>
   
   ### Development/Deployement resources:
