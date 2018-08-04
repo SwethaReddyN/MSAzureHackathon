@@ -1,4 +1,4 @@
-# **RECYCLE.IO**
+ **RECYCLE.IO**
 
 Welcome to the home of Recycle.io
 
@@ -26,6 +26,6 @@ This tutorial shows how to setup Recycle.io system. It includes Edge modules sou
 5. Download [deployment.json](https://github.com/MSAzureHackathon/recycle.io/blob/master/edge/config/deployement.json) file.
 6. Update azure registry container details and environment variables in the downloaded file.
 7. Update desired properties:
-		a. binWidth - width of the trash bin (number)
-		b. binType - recycle or organic
+		* binWidth - width of the trash bin (number)
+		* binType - recycle or organic
 8. In the Azure IoT Hub Devices explorer, right-click on registered Pi, and then select Create Deployment for IoT Edge device. Select the downloaded deployment.json file and then choose Select Edge Deployment Manifest.
