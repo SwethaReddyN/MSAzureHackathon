@@ -1,4 +1,4 @@
- **RECYCLE.IO**
+ # **RECYCLE.IO**
 
 Welcome to the home of Recycle.io
 
