@@ -35,6 +35,7 @@ This tutorial shows how to setup Recycle.io system. It includes Edge modules sou
 
   <br>
   
-  ### Architectural diagram
+  ## Architectural diagram
+  <br>
   
   ![Recycle.io - Diagram](recycle_io.png)
