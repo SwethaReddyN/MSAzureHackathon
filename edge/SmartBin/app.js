@@ -16,7 +16,6 @@ var ContaminantsInfo = require('./contaminants_info.js');
 global.currentEvents = [];
 
 GrovePiBoard.initializeBoard();
-BinInfo.setupBin();
 
 var socket = IO('http://127.0.0.1:8090');
 
@@ -33,10 +32,16 @@ socket.on('desiredproperties', function(data) {
 		BinInfo.setBinType(data.binType);
 });
 
+socket.on('binId', function(data) {
+	
+	BinInfo.setBinId(data.binId);
+	BinInfo.setupBin();
+});
+
 //receive violation image url
 socket.on('violationInfo', function(data) {
 	
-	BinInfo.updateViolationInfo(BinInfo.getBinId(), data.url, data.blobName);
+	BinInfo.updateViolationInfo(data.url, data.blobName);
 	BinInfo.cleanupEventDetails(data.blobName);
 });
 

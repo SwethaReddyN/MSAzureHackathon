@@ -15,6 +15,7 @@ const geo_location = require('google-geolocation') ({
 
 var mac_address = "";
 var binType = "recycle";
+var binId = "device1122";
 
 var BinInfo = {
 	
@@ -22,6 +23,7 @@ var BinInfo = {
 	geo_location: geo_location,
 	mac_address: mac_address,
 	binType: binType,
+	binId: binId,
 	
 	//get mac address of the edge device
 	getMacAddress: function(callback) {
@@ -47,7 +49,12 @@ var BinInfo = {
 	
 	//get edge mac address
 	getBinId: function() {
-		return mac_address;
+		return binId;
+	},
+	
+	setBinId: function(id) {
+		binId = id;
+		return binId;
 	},
 	
 	//Google Geolocation API request
@@ -88,8 +95,9 @@ var BinInfo = {
 		BinInfo.getMacAddress(function(macAddress) {
 			
 			mac_address = macAddress;
+			
 			BinInfo.getLocation(macAddress, function(data) {
-				RestClient.setupBin(macAddress, data.location.lat, 
+				RestClient.setupBin(BinInfo.getBinId(), data.location.lat, 
 				data.location.lng, BinInfo.getBinType());
 			});
 		});
@@ -108,13 +116,15 @@ var BinInfo = {
 	},
 	
 	//update violation and event details
-	updateViolationInfo: function(binId, imageUrl, blobName) {
+	updateViolationInfo: function(imageUrl, blobName) {
+		
 		var violations = currentEvents[blobName]["violations"];
 		var timestamp = currentEvents[blobName]["timestamp"];
-		RestClient.sendViolationInfo(binId, violations, timestamp, imageUrl);
+		RestClient.sendViolationInfo(BinInfo.getBinId(), violations, timestamp, imageUrl);
 	},
 	
 	cleanupEventDetails: function(eventId) {
+		
 		delete currentEvents[eventId];
 	}
 }

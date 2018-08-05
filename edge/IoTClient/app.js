@@ -92,12 +92,10 @@ hubClient.open(function(err) {
 						
 						var message = JSON.parse(msg.data.toString('utf-8'));
 						//extract blob name and blob uri from the received message
-						var tokens = message.blobName.split("/");
 						var blobUri = message.blobUri;
-						var binId = tokens[0];
-						var blobName = tokens[1];
+						var blobName = message.blobName.split("/")[1];
 						console.log("File uploaded: " + blobName);
-						Gateway.sendBlobInfo(binId, blobUri, blobName);
+						Gateway.sendBlobInfo(blobUri, blobName);
 					});
 				}
 			}
@@ -111,6 +109,7 @@ io.on('connection', function(client) {
 	console.log('Smart Bin connected');
 	if(desiredProperties)
 		Gateway.updateDesiredProperties(desiredProperties);
+	Gateway.setBinId(process.env.IOTEDGE_DEVICEID);
 	
 	//Receive violation image from recycle.io core
 	client.on('uploadfile', function(data) {
@@ -152,13 +151,18 @@ var Gateway = {
 	},
 	
 	//send blob name and uri to core
-	sendBlobInfo: function(binId, blobUrl, blobName) {
-		io.emit("violationInfo", {"binId": binId, "url": blobUrl, "blobName": blobName});
+	sendBlobInfo: function(blobUrl, blobName) {
+		io.emit("violationInfo", {"url": blobUrl, "blobName": blobName});
 	},
 	
 	//send config info to core
 	sendCustomizationInfo: function(config) {
 		io.emit("configurationInfo", {"config": config});
+	},
+	
+	setBinId: function(binId) {
+		
+		io.emit("binId", {"binId": binId});
 	}
 }
 

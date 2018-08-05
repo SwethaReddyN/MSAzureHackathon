@@ -28,7 +28,7 @@ var RestClient = {
 					error, response, body) {
 			
 			console.log(body);
-		}); 
+		});
 	},
 	
 	//send image for processing
