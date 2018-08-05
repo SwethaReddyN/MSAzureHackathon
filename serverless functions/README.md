@@ -1,4 +1,4 @@
-## Please Note: The functions interact with SQL Database and IoT hub. 
+# Please Note: The functions interact with SQL Database and IoT hub. 
 
 ## The Password to connect to database and SharedAccessKey of Connectionstring is not shared,if you want access to them, 
 
