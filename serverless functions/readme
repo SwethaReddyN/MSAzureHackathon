@@ -1,3 +1,5 @@
+## Please Note: The functions interact with SQL Database and IoT hub. The Password to connect to database and SharedAccessKey of Connectionstring is not shared,if you want access to them, please email me to richajain44@gmail.com
+
 This folder contains 7 Azure Serverless Functions. Below is the snapshot of all functionalities of each of them
 
 1. smartbincreation - This function is invoked when Raspberry Pi is installed in the Bin for the first time.
@@ -21,3 +23,14 @@ BinType and analytics of different type of violatins that occured.
 
 7. smartimageurl - This function is triggered when a particular Bin on the WebApp is accessed. 
 It dispalys the latest violation image for that Bin.
+
+These functions interact with azure Database. To create a database, please follow below instructions:
+1. Login to Azure protal
+2. Click on create resource -> SQL Database
+3. Add Databasename (for this setup database name is -bindb, SQL server userName is smartwasteadmin, SQL server name is smartwastebin.database.windows.net),
+subscription-free tier, resource group-smartwastebin (used across all the functions, database, IoT hub)
+4. Under server- > configure details with serverName, password, subscription, resource group, location. Click on select which will create SQL server\
+5. Choose appripritate storage and click apply
+6. Click on 'CREATE' to create the database
+
+Below is the link to the tutorial for creation of SQL Database which I referred: https://docs.microsoft.com/en-us/azure/sql-database/sql-database-get-started-portal
