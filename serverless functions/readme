@@ -2,6 +2,9 @@
 ## The Password to connect to database and SharedAccessKey of Connectionstring is not shared,if you want access to them, 
 ## please email me to richajain44@gmail.com
 
+This ReadMe file gives a brief intro on the 7 functions used in the App and also gives a qucik tutorial on creating necessary resources
+for them to function.
+
 This folder contains 7 Azure Serverless Functions. Below is the snapshot of all functionalities of each of them
 
 1. smartbincreation - This function is invoked when Raspberry Pi is installed in the Bin for the first time.
