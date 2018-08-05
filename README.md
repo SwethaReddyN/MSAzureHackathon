@@ -39,3 +39,6 @@ This tutorial shows how to setup Recycle.io system. It includes Edge modules sou
   <br>
   
   ![Recycle.io - Diagram](recycle_io.png)
+  
+  ## Testing functions
+  Each Function code has the sample URL to test them. Please note that these functions interact with SQL Database, which needs password to connect. The code doesn't contain Password for security reasons, please email (richajain44#gmail.com) for the password. One of the function (smartqueuetrigger.js) also interacts with IoT Hub, whose Connection String has SharedAccessKey is not made public, please email richajain44@gmail.com for to get access to it.
