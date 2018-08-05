@@ -26,7 +26,9 @@ This tutorial shows how to setup Recycle.io system. It includes Edge modules sou
 3. Install [Docker CE](https://docs.docker.com/install/) on the device with Visual Studio Code.
 4. Configure the Azure IoT Toolkit extension with the connection string for your IoT hub.
 5. Download [deployment.json](https://github.com/MSAzureHackathon/recycle.io/blob/master/edge/config/deployement.json) file.
-6. Update azure registry container details and environment variables in the downloaded file.
+6. Update environment variables in the downloaded file.
+	* Set IoTHubConnectionString env variable
+	* Set IoTDeviceConnectionString env variable
 7. Update desired properties:
 	* binWidth - width of the trash bin (number)
 	* binType - recycle or organic
