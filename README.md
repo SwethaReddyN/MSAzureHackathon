@@ -19,8 +19,8 @@ This tutorial shows how to setup Recycle.io system. It includes Edge modules sou
 	![edge/setup.jpeg](edge/setup.jpeg)
 		
   <br>
-  
-  ### Development/Deployement resources
+
+  ### Development/Deployment resources
 1. Install [Visual Studio Code](https://code.visualstudio.com/download).
 2. [Azure IoT Edge extension](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge) for Visual Studio Code.
 3. Install [Docker CE](https://docs.docker.com/install/) on the device with Visual Studio Code.
@@ -31,3 +31,11 @@ This tutorial shows how to setup Recycle.io system. It includes Edge modules sou
 	* binWidth - width of the trash bin (number)
 	* binType - recycle or organic
 8. In the Azure IoT Hub Devices explorer, right-click on registered Pi, and then select Create Deployment for IoT Edge device. Select the downloaded deployment.json file and then choose Select Edge Deployment Manifest.
+
+
+  <br>
+  
+  ## Architectural diagram
+  <br>
+  
+  ![Recycle.io - Diagram](recycle_io.png)
