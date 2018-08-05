@@ -16,8 +16,7 @@ This tutorial shows how to setup Recycle.io system. It includes Edge modules sou
 	4. Connect ultrasonic ranger sensor to Digital Pin 3
 	5. Connect camera module to RaspberryPi
 	6. Place/attach ultrasonic ranger and camera to the bin as shown below <br><br>
-	![edge/setup.jpeg](edge/setup.jpeg)
-		
+	![edge/setup.jpeg](edge/setup.jpeg)	
   <br>
 
   ### Development/Deployment resources
@@ -34,9 +33,11 @@ This tutorial shows how to setup Recycle.io system. It includes Edge modules sou
 	* binType - recycle or organic
 8. In the Azure IoT Hub Devices explorer, right-click on registered Pi, and then select Create Deployment for IoT Edge device. Select the downloaded deployment.json file and then choose Select Edge Deployment Manifest.
 
-
   <br>
   
+  ## How to test the system
+
+  After all the moduels start running on edge device, place some trash in the bin (System might not detect the event if trash is thrown very quickly). Prototype custom vision model is trained to detect cardboard, styrofoam, plastic bags, cfl and egg shell. If there is any violation, details will be updated in SQL database, which can be verified via web application. Click on the bin displayed on the maps and a link to last violation image is present at the bottom of the details page.
   ## Architectural diagram
   <br>
   
