@@ -33,6 +33,7 @@ This tutorial shows how to setup Recycle.io system. It includes Edge modules sou
   ## How to test the system
   After all the moduels start running on edge device, place some trash in the bin (System might not detect the event if trash is thrown very quickly). Prototype custom vision model is trained to detect cardboard, styrofoam, plastic bags, cfl and egg shell. If there is any violation, details will be updated in SQL database, which can be verified via web application. Click on the bin displayed on the maps and a link to last violation image is present at the bottom of the details page.
   <br>
+  <br>
   
   ## Architectural diagram
   <br>
