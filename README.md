@@ -2,7 +2,7 @@
 
 Welcome to the home of Recycle.io
 
-This tutorial shows how to setup Recycle.io system. It includes Edge modules source code and deployment template.
+This tutorial shows how to setup Recycle.io system. It includes Edge modules source code and deployment template as well as Azure functions and recycle.io web application source code.
 <br>
 <br>
 
